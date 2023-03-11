@@ -6,7 +6,7 @@ const auth = async (req,res,next) => {
 
     try {
     const token = req.header('Authorization').replace('Bearer ',"")
-   //console.log("Token to be verifies is ", token)
+   console.log("Token to be verifies is ", token)
     const isMatch = jwt.verify(token,process.env.JWT_SECRET)
 
     const user1 =  await user.findOne({_id : isMatch._id, 'tokens.token' : token})

@@ -7,7 +7,6 @@ const app = express()
 
 const port = process.env.PORT
  
-console.log(process.env)
 
 // app.use((req,res,next) => {
 //     if(req.method === 'GET'){

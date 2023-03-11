@@ -8,12 +8,12 @@ router.post('/tasks', auth, async (req,res) => {
         ...req.body,
         owner : req.user._id
     })
-
+        console.log("Task save karna hai", task1)
     try {
         await task1.save()
         res.status(201).send(task1)
     } catch (error) {
-        res.status(404).send(error)
+        res.status(404).send("Kuch gadbad hai")
     }
 
     // task1.save().then(task => {
